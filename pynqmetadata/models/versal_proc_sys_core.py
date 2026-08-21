@@ -61,6 +61,8 @@ class VersalProcSysCore(ProcSysCore):
 
     type: str = "core-versal"
     ps_name: str = "versal_cips"
+    # Versal also exposes EMIO GPIO on LPD_GPIO, VCK190 device tree only uses PMC_GPIO
+    gpio_name: str = "PMC_GPIO"
     # PL to PS interrupts are one bit per port rather than a bus. Devices
     # either expose one family, or split it by power domain with a different
     # range for each. A design only carries the ports of its own family.
